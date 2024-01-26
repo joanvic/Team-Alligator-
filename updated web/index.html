@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>ANYA FLOWERSHOP</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Anyacrafts<span>.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#products">products</a>
+            <a href="#review">review</a>
+            <a href="#contacts">contacts</a>
+        </nav>
+      
+        <div class="icons">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" id="cartIcon" class="fas fa-shopping-cart"> <span id="cartCount" class="cart-count">0</span> </a>
+            <a href="#" class="fas fa-user"></a>
+        </div>
+
+        <div class="modal" id="cartModal">
+            <div class="modal-content">
+                <h2 id="checkoutHeading">Checkout</h2>
+
+                <form id="checkoutForm">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+        
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+        
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+        
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+        
+                    <label for="paymentMode">Mode of Payment:</label>
+                    <select id="paymentMode" name="paymentMode" required>
+                        <option value="creditCard">Gcash</option>
+                        <option value="paypal">PayMaya</option>
+                        <option value="paypal">Cash on Delivery</option>
+                       
+                    </select>
+        
+                    <div id="selectedItemImageContainer">
+                        <img id="selectedItemImage" >
+
+                      </div>
+
+                      <div id="selectedItemsSection">
+                        <h4>Selected Items:</h4>
+                        <ul id="selectedItemsList"></ul>
+                      </div>
+        
+                    <div class="buttons">
+                        <button type="button" onclick="continueShopping()">Continue Shopping</button>
+                        <button type="submit">Checkout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Welcome to AnyaCrafts</h3>
+            <span> Everlasting Flower Bouquets.</span> 
+            <p>Welcome to our online flower shop, where nature meets convenience. Explore fresh, curated blooms for any occasion. Customize your order, add a personal touch, and let us deliver the magic to your doorstep or a loved one's. Experience the beauty of flowers with a few simple clicks.</p>
+            <a href="#" class="btn">shop now</a>
+
+        </div>
+       
+    </section>
+
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span> about </span> us </h1>
+
+        <div class="row">
+
+           <div class="video-container">
+                <video src="Video.mp4" loop autoplay muted></video>
+                <h3>best flower sellers</h3>
+           </div>
+           <div class="content">
+                <h3>why choose us?</h3>
+                <p>Discover the difference at our flower shop, where quality meets creativity. Our high-quality, unique arrangements are crafted to elevate any occasion, reflecting our commitment to exceptional customer service and prompt deliveries. From personalized designs to a wide product range, we blend artistry with convenience, ensuring each experience is memorable.
+                    <br> <br>Choose our flower shop for a seamless blend of quality blooms and dedicated service, turning moments into cherished memories.
+
+                    Embrace the charm of our flower shop, where care meets sustainability. With a focus on community and eco-friendly practices, we offer a delightful online experience from selection to delivery. Elevate your moments with our passion for floral artistry, turning each petal into a testament of customer satisfaction. Join us and discover the joy in simplicity and the beauty in every bloom.</p>
+                <a href="#" class="btn">learn more</a>
+           </div>
+        </div>
+
+    </section>
+
+    <section class="icons-container">
+
+        <div class="icons"> 
+            <img src="freeD.png" alt="Free Delivery Image">
+            <div class="info">
+                <h3>free delivery</h3>
+                <span>on all orders</span>
+            </div>
+            
+        </div>
+
+        <div class="icons"> 
+            <img src="money.jpg" alt="Free Delivery Image">
+            <div class="info">
+               <h3>10 days return</h3>
+               <span>moneyback guarantee</span>
+            </div>
+       </div> 
+
+       <div class="icons"> 
+        <img src="gift.png" alt="Free Delivery Image">
+        <div class="info">
+           <h3>offer and gifts</h3>
+           <span>on all orders</span>
+        </div>
+        </div>
+
+        <div class="icons"> 
+            <img src="gcashicon.jpg" alt="Free Delivery Image">
+            <div class="info">
+               <h3>secure payment</h3>
+               <span>secured by gcash</span>
+            </div>
+       </div> 
+
+   
+
+    </section>
+
+<section class="products" id="products">
+
+    <h1 class="heading"> latest <span>products</span></h1>
+    <div class="box-container">
+
+        <div class="box" data-product-id="1" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="redrose.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Red Rose</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="2" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="rosegold2.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Rose Gold</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+        
+        <div class="box" data-product-id="3" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="pera.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Money Bouquet</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="4" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="pinkrose.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Pink Rose</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="5" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="sunflower.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Sunflower</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="6" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="whiterose.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>White Rose</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="7" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="rosegold2.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Rose Gold v2</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="8" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="pera.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Money Bouquet v2</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+
+        <div class="box" data-product-id="9" onclick="openCartModal(this)">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="whiterose.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>White Rose</h3>
+                <div class="price"> ₱200<span>₱299</span></div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+<section class="review" id="review">
+
+<h1 class="heading"> customer's <span>review</span></h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p> brgfhbeghfvhxvehargfhuegbvfeghsvrghvreshtvghesvfgveghvfgvegvfadfadf
+            fadsfadfadsfabgsfdgsfhsdghfsghsmfbadfbjadgfahdgfjahsdfagjhdgfajhdgfhagdf
+            fakldshfajdgkjfgahdgfahsdgfakjsdjkfhajksdfhakjfdjahfakjhsdfjhkjha
+            adfalkdjfjalskdfjalkdfabgjahdjkgakjdgfakjhdfakjdhfadh
+        </p>
+        <div class="user">
+            <img src="pat.jpg" alt="">
+            <div class="user-info">
+                <h3>Patricia Sison</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p> brgfhbeghfvhxvehargfhuegbvfeghsvrghvreshtvghesvfgveghvfgvegvfadfadf
+            fadsfadfadsfabgsfdgsfhsdghfsghsmfbadfbjadgfahdgfjahsdfagjhdgfajhdgfhagdf
+            fakldshfajdgkjfgahdgfahsdgfakjsdjkfhajksdfhakjfdjahfakjhsdfjhkjha
+            adfalkdjfjalskdfjalkdfabgjahdjkgakjdgfakjhdfakjdhfadh
+        </p>
+        <div class="user">
+            <img src="vicsotto.jpg" alt="">
+            <div class="user-info">
+                <h3>Laurence Lagado</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p> brgfhbeghfvhxvehargfhuegbvfeghsvrghvreshtvghesvfgveghvfgvegvfadfadf
+            fadsfadfadsfabgsfdgsfhsdghfsghsmfbadfbjadgfahdgfjahsdfagjhdgfajhdgfhagdf
+            fakldshfajdgkjfgahdgfahsdgfakjsdjkfhajksdfhakjfdjahfakjhsdfjhkjha
+            adfalkdjfjalskdfjalkdfabgjahdjkgakjdgfakjhdfakjdhfadh
+        </p>
+        <div class="user">
+            <img src="nelson.jpg" alt="">
+            <div class="user-info">
+                <h3>Nelson Abuan</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p> brgfhbeghfvhxvehargfhuegbvfeghsvrghvreshtvghesvfgveghvfgvegvfadfadf
+            fadsfadfadsfabgsfdgsfhsdghfsghsmfbadfbjadgfahdgfjahsdfagjhdgfajhdgfhagdf
+            fakldshfajdgkjfgahdgfahsdgfakjsdjkfhajksdfhakjfdjahfakjhsdfjhkjha
+            adfalkdjfjalskdfjalkdfabgjahdjkgakjdgfakjhdfakjdhfadh
+        </p>
+        <div class="user">
+            <img src="yunis.jpg" alt="">
+            <div class="user-info">
+                <h3>Eunice Emata</h3>
+                <span>happy customer</span>
+            </div>
+        </div>
+        <span class="fas fa-quote-right"></span>
+    </div>
+</div>
+</section>
+
+
+<section class="contacts" id="contacts">
+
+<h1 class="heading"><span>contact<span></span></h1>
+<div class="row">
+
+<form action="">
+    <input type="text" placeholder="name" class="box">
+    <input type="email" placeholder="email" class="box">
+    <input type="number" placeholder="number" class="box">
+<textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
+<input type="submit" value="send message" class="btn">
+ 
+</form>
+
+
+</div>
+
+</section>
+
+
+
+
+ <script>
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const checkoutForm = document.getElementById('checkoutForm');
+        const selectedItemImage = document.getElementById('selectedItemImage');
+        const cartCountElement = document.getElementById('cartCount');
+
+       
+        let cartCount = 0;
+        let cartItems = [];
+
+       
+        function openCartModal(item) {
+            cartModal.style.display = 'flex';
+            selectedItemImage.src = item.querySelector('img').src;
+            const itemName = item.querySelector('.content h3').textContent;
+            cartItems.push(itemName);
+
+       
+            cartCount++;
+            updateCartCount();
+            updateCartItems();
+            updateSelectedItemsSection();
+        }
+
+      
+        function updateCartCount() {
+            cartCountElement.textContent = cartCount;
+        }
+
+       
+        function updateCartItems() {
+      
+        }
+
+        // Function to update the selected items section
+        function updateSelectedItemsSection() {
+            const selectedItemsSection = document.getElementById('selectedItemsSection');
+            const selectedItemsList = document.getElementById('selectedItemsList');
+
+            selectedItemsList.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.addEventListener('click', () => removeSelectedItem(item));
+                listItem.appendChild(removeButton);
+
+                selectedItemsList.appendChild(listItem);
+            });
+
+            
+            selectedItemsSection.style.display = cartItems.length > 0 ? 'block' : 'none';
+
+          
+            if (cartItems.length === 0) {
+                selectedItemImage.src = ''; 
+            }
+        }
+
+        // Function to remove a selected item
+        function removeSelectedItem(item) {
+            const itemIndex = cartItems.indexOf(item);
+            if (itemIndex !== -1) {
+                cartItems.splice(itemIndex, 1);
+                cartCount--; // Decrease the cart count
+                updateCartCount();
+                updateSelectedItemsSection();
+            }
+        }
+
+        // Function to close the modal
+        function closeCartModal() {
+            cartModal.style.display = 'none';
+        }
+
+        function continueShopping() {
+            closeCartModal();
+        }
+
+        cartIcon.addEventListener('click', openCartModal);
+
+        checkoutForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Ensure the user has selected at least one item
+            if (cartItems.length === 0) {
+                alert('Please add items to the cart before checking out.');
+                return;
+            }
+
+            // Display a confirmation message
+            const selectedItem = cartItems[cartItems.length - 1];
+            const receiptCode = generateReceiptCode();
+            const dateTime = getCurrentDateTime();
+
+            const confirmationMessage = `THANKS for purchasing the '${selectedItem}'! We appreciate your continued support.\n\nReceipt Code: ${receiptCode}\nDate and Time: ${dateTime}`;
+
+            alert(confirmationMessage);
+
+            cartItems = [];
+            cartCount = 0; // Reset cart 
+            updateCartCount();
+            updateSelectedItemsSection();
+            closeCartModal();
+        });
+
+        // Function to generate a random receipt code
+        function generateReceiptCode() {
+            return Math.random().toString(36).substring(2, 10).toUpperCase();
+        }
+
+        // Function to get the current date and time
+        function getCurrentDateTime() {
+            const now = new Date();
+            return now.toLocaleString();
+        }
+    </script>
+
+
+
+
+</body>
+</html>
